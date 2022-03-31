@@ -1,0 +1,28 @@
+body {
+  background: linear-gradient(180deg, #247ba0 50%, white 50%);
+  height: 100vh;
+}
+
+#formCadastroProduto{
+  background :#fff;
+  padding: 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+#formCadastroProduto > form input[type="submit"]{
+  margin-top: 2rem;
+  padding: 0.4rem;
+  background: linear-gradient(to left, #00ced1, #00a8ff); 
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  font-weight:300px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+} 
+
+#formCadastroProduto > form input[type="submit"]:hover{
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #00ced1, #00a8ff); 
+}

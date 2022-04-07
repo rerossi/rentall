@@ -6,10 +6,11 @@
 <div class="row d-flex justify-content-center">
   <div id="formCadastroProduto" class="col-4">
     <h2> Novo Produto </h2>
-    <form class="needs-validation" novalidate method="post" action="../produto/novoProduto.php" enctype="multipart/form-data">
-      <section class="mb-3 ">
+    <form class="needs-validation" enctype="multipart/form-data" novalidate method="post" action="../produto/novoProduto.php">
+
+      <div class="mb-3 ">
         <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Titulo Produto" required value="<?php echo $produto['titulo'] ?? ''; ?>">
-      </section>
+      </div>
 
       <div class="mb-3">
         <select name="opcao" class="form-select" required value="<?php echo $produto['categoria'] ?? ''; ?>">
@@ -50,11 +51,11 @@
 
       <div class="d-grid gap-2">
 
-      <input type="submit" value="Cadastrar">
+        <input type="submit" value="Cadastrar">
 
-      <a class="text-center mt-4" style="text-decoration: none; color: #808080" href="./index.php">
-        <spam> Voltar </spam>
-      </a>
+        <a class="text-center mt-4" style="text-decoration: none; color: #808080" href="./index.php">
+          <spam> Voltar </spam>
+        </a>
       </div>
 
     </form>

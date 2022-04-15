@@ -3,65 +3,52 @@
 @section('content')
 
 
-<div class="row d-flex justify-content-center">
-  <div id="formCadastroProduto" class="col-4">
-    <h2> Novo Produto </h2>
-    <form class="needs-validation" enctype="multipart/form-data" novalidate method="post" action="../produto/novoProduto.php">
+<a clas="my-5" href="../telas/index.php">
+    <img src="../imagens/logo-branco.png" style="width: 100px; margin-left: -150px;">
+</a>
 
-      <div class="mb-3 ">
-        <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Titulo Produto" required value="<?php echo $produto['titulo'] ?? ''; ?>">
-      </div>
+<div class="text-center justify-content-center d-flex align-items-center pb-3 ">
+    <button class="btn botao btn-dark"><a href="../telas/formProduto.php" class="text-decoration-none text-reset"> Cadastrar Produto </a></button>
+</div>
+<section class="container fundo">
+    <h2> Meus Produtos </h2>
+    <form method="post" action="">
+        <table class="table ">
+            <thead>
+                <tr>
 
-      <div class="mb-3">
-        <select name="opcao" class="form-select" required value="<?php echo $produto['categoria'] ?? ''; ?>">
-          <option value=null> Categoria</option>
-          <option value="Eletronicos" id="eletronicos">Eletrônicos</option>
-          <option value="Esportes" id="esportes">Esportes</option>
-          <option value="Ferramentas" id="ferramentas">Ferramentas</option>
-          <option value="Games" id="games">Games</option>
-          <option value="Domestico" id="domestico">Utensílios Doméstico</option>
-        </select>
-      </div>
+                    <th>Titulo</th>
+                    <th>Categoria</th>
+                    <th>Marca</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                    <th>Imagem</th>
+                    <th>Editar</th>
+                    <th>Apagar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ( $products as $product )
 
-      <div class="input-group mb-3">
-        <span class="input-group-text">R$</span>
-        <input type="number" name="preco" id="preco" min="0" class="form-control" placeholder=" Valor diária" required value="<?php echo $produto['preco'] ?? ''; ?>">
-        <span class="input-group-text">,00</span>
-      </div>
+                    {{-- <td class="text-center fs-3" colspan="10"> Sem Resgistros </td> --}}
 
-      <div class="mb-3">
-        <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Modelo" required value="<?php echo $produto['modelo'] ?? ''; ?>">
-        <div class="underline"> </div>
-      </div>
+                           <tr>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->Category->name}}</td>
+                            {{-- <td>{{$product->brand}}</td> --}}
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->description}}</td>
+                            <td>{{$product->image}}</td>
+                            <td><button name="editar" class="btn btn-success my-2">Editar</button></td>
+                            <td><button name="excluir" class="btn btn-danger my-2">Excluir</button></td>
+                        </tr>
 
-      <div class="mb-3">
-        <input type="text" name="marca" id="marca" class="form-control" placeholder="Marca" required value="<?php echo $produto['marca'] ?? ''; ?>">
-        <div class="underline"> </div>
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text">Descrição</span>
-        <textarea name="descricao" id="descricao" class="form-control" aria-label="With textarea" required><?php echo $produto['descricao'] ?? ''; ?></textarea>
-      </div>
-
-
-      <div class="input-group ">
-        <input type="file" class="form-control" name="upload" id="upload" aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
-      </div>
-
-      <div class="d-grid gap-2">
-
-        <input type="submit" value="Cadastrar">
-
-        <a class="text-center mt-4" style="text-decoration: none; color: #808080" href="./index.php">
-          <spam> Voltar </spam>
-        </a>
-      </div>
+                @endforeach
+        </table>
 
     </form>
-  </div>
+</section>
 
-</div>
 
 
 

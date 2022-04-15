@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-    //     schema::table('tags', function (Blueprint $table){ nao esta pronto
-    //         $table->softDeletes();
-    //     });
-    // }
+        schema::table('products', function (Blueprint $table){
+        $table->softDeletes();
+    });
+     }
 
     /**
      * Reverse the migrations.
@@ -25,9 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        // schema::table('tags', function (Blueprint $table){
-        //     $table->dropColumn('deleted_at');
+        schema::table('products', function (Blueprint $table){
+        $table->dropColumn('deleted_at');
 
-        // });
+    });
     }
 };

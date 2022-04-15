@@ -11,8 +11,15 @@
             </div>
 
             <div class="mb-3">
-                <select name="category_id" class="form-select" required >
-                    <option value="1"> Categoria</option>
+                <select class="form-select" name="category_id" required>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <select name="brand_id" class="form-select" required >
+                    <option value="1">Marca</option>
                     <option value="2" id="eletronicos">Eletrônicos</option>
                     <option value="3" id="esportes">Esportes</option>
                     <option value="4" id="ferramentas">Ferramentas</option>
@@ -27,16 +34,6 @@
                 <span class="input-group-text">,00</span>
             </div>
 
-            <div class="mb-3">
-                <select name="brand_id" class="form-select" required >
-                    <option value="1">Marca</option>
-                    <option value="2" id="eletronicos">Eletrônicos</option>
-                    <option value="3" id="esportes">Esportes</option>
-                    <option value="4" id="ferramentas">Ferramentas</option>
-                    <option value="5" id="games">Games</option>
-                    <option value="6" id="domestico">Utensílios Doméstico</option>
-                </select>
-            </div>
 
             <div class="input-group mb-3">
                 <span class="input-group-text">Descrição</span>
@@ -58,7 +55,7 @@
                     <spam> Voltar </spam>
                 </a>
             </div>
-            <!-- 
+            <!--
             <label for="name">Nome do produto</label>
             <input type="text" name="name" id="name">
             <label for="description">Descrição</label>

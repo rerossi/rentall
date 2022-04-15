@@ -12,14 +12,12 @@
 </div>
 <section class="container fundo">
     <h2> Meus Produtos </h2>
-    <form method="post" action="">
         <table class="table ">
             <thead>
                 <tr>
 
                     <th>Titulo</th>
                     <th>Categoria</th>
-                    <th>Marca</th>
                     <th>Preço</th>
                     <th>Descrição</th>
                     <th>Imagem</th>
@@ -29,24 +27,22 @@
             </thead>
             <tbody>
                 @foreach ( $products as $product )
-
+                <tr>
                     {{-- <td class="text-center fs-3" colspan="10"> Sem Resgistros </td> --}}
 
                            <tr>
                             <td>{{$product->name}}</td>
                             <td>{{$product->Category->name}}</td>
-                            {{-- <td>{{$product->brand}}</td> --}}
                             <td>{{$product->price}}</td>
                             <td>{{$product->description}}</td>
                             <td>{{$product->image}}</td>
-                            <td><button name="editar" class="btn btn-success my-2">Editar</button></td>
-                            <td><button name="excluir" class="btn btn-danger my-2">Excluir</button></td>
+                            <td><button name="editar" class="btn btn-success my-2"> <a href="{{route('product.edit', $product->id)}}">Editar</a></button></td>
+                            <td><button name="excluir" class="btn btn-danger my-2"><a href="{{route('product.destroy', $product->id)}}">Excluir</a></button></td>
                         </tr>
 
                 @endforeach
+                </tbody>
         </table>
-
-    </form>
 </section>
 
 

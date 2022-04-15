@@ -22,18 +22,18 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->all());
-        return redirect(route('product.create'));
+        return redirect(route('product.index'));
     }
 
     public function edit(Product $product)
     {
-        return view('product.edit')->with('product', $product);
+        return view('product.edit')->with(['product' => $product, 'categories' => Category::all()]);
     }
 
     public function update(Product $product, Request $request)
     {
         $product->update($request->all());
-        return redirect(route('product.edit', $product->id));
+        return redirect(route('product.index', $product->id));
     }
 
     public function destroy(Product $product){

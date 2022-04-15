@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     protected $fillable = ['name', 'description', 'price',  'brand_id', 'category_id', 'image'];
 
     public function Category()
@@ -16,8 +17,5 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function Brand()
-    {
-        return $this->belongsTo(Brand::class);
-    }
+
 }

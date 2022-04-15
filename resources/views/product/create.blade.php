@@ -37,7 +37,7 @@
 
             <div class="input-group mb-3">
                 <span class="input-group-text">Descrição</span>
-                <textarea name="description" id="descricao" class="form-control" aria-label="With textarea" required><?php echo $produto['descricao'] ?? ''; ?></textarea>
+                <textarea name="description" id="descricao" class="form-control" aria-label="With textarea" required></textarea>
             </div>
 
 
@@ -51,20 +51,8 @@
 
                 <input type="submit" value="Cadastrar">
 
-                <a class="text-center mt-4" style="text-decoration: none; color: #808080" href="./index.php">
-                    <spam> Voltar </spam>
-                </a>
             </div>
-            <!--
-            <label for="name">Nome do produto</label>
-            <input type="text" name="name" id="name">
-            <label for="description">Descrição</label>
-            <input type="text" name="description" id="description">
-            <label for="price">Preço</label>
-            <input type="number" step="0.1" name="price" id="price">
-            <label for="stock">estoque</label>
-            <input type="number" name="stock" id="stock">
-            <button type="submit">Enviar</button> -->
+
         </form>
     </div>
 </div>

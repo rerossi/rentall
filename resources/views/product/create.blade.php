@@ -4,7 +4,7 @@
 <div class="row d-flex justify-content-center">
     <div id="formCadastroProduto" class="col-4">
         <h2> Novo Produto </h2>
-        <form class="needs-validation" enctype="multipart/form-data" action="{{route('product.store')}}" method="POST">
+        <form class="needs-validation" enctype="multipart/form-data" action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3 ">
                 <input type="text" name="name" id="titulo" class="form-control" placeholder="Titulo Produto" required >
@@ -43,7 +43,7 @@
 
             <div class="input-group ">
                 <!-- <input  type="file" class="form-control" name="upload" id="upload" aria-describedby="inputGroupFileAddon04" aria-label="Upload" > -->
-                <input type="text" name="image" id="image" class="form-control" placeholder="image Produto" required >
+                <input type="file" name="image" id="image" class="form-control" placeholder="image Produto" required >
 
             </div>
 

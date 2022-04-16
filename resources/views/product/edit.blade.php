@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{route('product.edit', $product->id)}}" method="POST">
+<form action="{{route('product.edit', $product->id)}}" method="POST" enctype="multipart/form-data" >
     @csrf
     @method("PUT")
     <div class="mb-3 ">
@@ -33,7 +33,7 @@
 
     <div class="input-group ">
         <!-- <input  type="file" class="form-control" name="upload" id="upload" aria-describedby="inputGroupFileAddon04" aria-label="Upload" > -->
-        <input type="text" name="image" id="image" class="form-control" placeholder="image Produto" value="{{$product->image}}" required >
+        <input type="file" name="image" id="image" class="form-control" placeholder="image Produto" value="{{$product->image}}" required >
 
     </div>
 

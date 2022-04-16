@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
+        schema::table('products', function (Blueprint $table){
+            $table->string('image')->default('storage/itens/image.jpg')->change();
         });
     }
 
@@ -27,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brands');
+        schema::table('products', function (Blueprint $table){
+            $table->dropColumn('image');
+        });
     }
 };

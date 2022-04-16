@@ -21,8 +21,8 @@
                     <th>Preço</th>
                     <th>Descrição</th>
                     <th>Imagem</th>
-                    <th>Editar</th>
-                    <th>Apagar</th>
+                    <th>Restaurar</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -36,8 +36,8 @@
                             <td>{{$product->price}}</td>
                             <td>{{$product->description}}</td>
                             <td><img src="{{asset($product->image)}}" style="width:100px;"></td>
-                            <td><button name="editar" class="btn btn-success my-2"> <a href="{{route('product.edit', $product->id)}}">Editar</a></button></td>
-                            <td><button name="excluir" class="btn btn-danger my-2"><a href="{{route('product.destroy', $product->id)}}">Excluir</a></button></td>
+                            <td><button name="editar" class="btn btn-success my-2"> <a href="{{route('product.restore', $product->id)}}">Restaurar</a></button></td>
+
                         </tr>
 
                 @endforeach

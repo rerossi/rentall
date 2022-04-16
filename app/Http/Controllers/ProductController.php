@@ -21,7 +21,17 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $product = Product::create($request->all());
+
+        $image = "storage/". $request->file('image')->store('itens');
+
+        $product = Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'image' => $image,
+        ]);
+
         return redirect(route('product.index'));
     }
 
@@ -32,12 +42,42 @@ class ProductController extends Controller
 
     public function update(Product $product, Request $request)
     {
-        $product->update($request->all());
+        if($request->image){
+            $image = "storage/". $request->file('image')->store('itens');
+
+            $product->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+                'category_id' => $request->category_id,
+                'image' => $image,
+            ]);
+        }
+        else{
+            $product->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            ]);
+        }
         return redirect(route('product.index', $product->id));
     }
 
     public function destroy(Product $product){
         $product->delete();
+        return redirect(route('product.index'));
+    }
+
+    public function trash(){
+
+        return view('product.trash')->with('products', Product::onlyTrashed()->get());
+
+    }
+
+    public function restore($product_id){
+        $product = Product::onlyTrashed()->where('id', $product_id)->first();
+        $product->restore();
         return redirect(route('product.index'));
     }
 }

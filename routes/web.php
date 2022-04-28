@@ -17,8 +17,14 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+Route::middleware(['auth', 'admin'])->group(function(){
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
 Route::get('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
@@ -37,3 +43,4 @@ Route::get('/category', [CategoryController::class, 'index'])->name('category.in
 Route::get('/category/trash', [CategoryController::class, 'trash'])->name('category.trash');
 Route::get('/category/trash/restore/{category}', [CategoryController::class, 'restore'])->name('category.restore');
 Route::get('/category/destroy/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
+});

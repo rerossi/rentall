@@ -11,15 +11,15 @@
     <div class="carousel-inner">
 
       <div class="carousel-item text-center active" data-bs-interval="5000">
-        <img src="../imagens/carrosel-2.png" class="" alt="...">
+        <img src="./image/carrosel-2.png" class="" alt="...">
       </div>
 
       <div class="carousel-item text-center" data-bs-interval="5000">
-        <img src="../imagens/banner2.png" class="" alt="...">
+        <img src="./image/banner2.png" class="" alt="...">
       </div>
 
       <div class="carousel-item text-center">
-        <img src="../imagens/carrosel-3.png" class="" alt="...">
+        <img src="./image/carrosel-3.png" class="" alt="...">
       </div>
 
     </div>
@@ -40,47 +40,47 @@
 <section class="my-5">
   <div class="row  justify-content-center min-width:50%">
     <div class=" p-3 col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/ferramentas.png" width="40%" class="my-1">
+      <img src="./image/ferramentas.png" width="40%" class="my-1">
       <h3 class="fs-4">Ferramentas</h3>
     </div>
     <div class=" p-1 col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/controle-de-video-game.png" width="50%">
+      <img src="./image/controle-de-video-game.png" width="50%">
       <h3 class="fs-4">games</h3>
     </div>
     <div class=" p-2 col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/informatica (2).png" width="50%">
+      <img src="./image/informatica (2).png" width="50%">
       <h3 class="fs-4">Informatica</h3>
     </div>
     <div class=" p-2 col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/sports.png" width="50%">
+      <img src="./image/sports.png" width="50%">
       <h3 class="fs-4">Esportes</h3>
     </div>
     <div class=" p-2 col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/instrumentos-musicais.png" width="50%">
+      <img src="./image/instrumentos-musicais.png" width="50%">
       <h3 class="fs-4">Instrumentos Musicais</h3>
     </div>
   </div>
 
   <div class="row justify-content-center">
     <div class="col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/batedeira.png" width="50%">
+      <img src="./image/batedeira.png" width="50%">
       <h3 class="fs-4">Eletroportateis</h3>
     </div>
     <div class="col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/moto.png" width="50%">
+      <img src="./image/moto.png" width="50%">
       <h3 class="fs-4">Veiculos</h3>
     </div>
     <div class="col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
 
-      <img src="../imagens/camera.png" width="50%">
+      <img src="./image/camera.png" width="50%">
       <h3 class="fs-4">Audio e Video</h3>
     </div>
     <div class="col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/moda.png" width="50%">
+      <img src="./image/moda.png" width="50%">
       <h3>Moda</h3>
     </div>
     <div class="col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-      <img src="../imagens/brinquedos-do-bebe.png" width="50%">
+      <img src="./image/brinquedos-do-bebe.png" width="50%">
       <h3>Brinquedos</h3>
     </div>
   </div>

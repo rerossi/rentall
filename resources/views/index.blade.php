@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <section class="pt-2">
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -60,7 +61,19 @@
       <h3 class="fs-4">Instrumentos Musicais</h3>
     </div>
   </div>
-
+  @foreach ($products as $product)
+  <div class="mx-auto col-sm-10 col-md-6 col-lg-3">
+      <img src="{{ asset($product->image) }}" class="img-fluid">
+      <span class="d-block h6 text-center mt-3">{{ $product->name }}</span>
+      <div class="text-center">
+          <span class="text-muted">R$ {{ $product->price }}</span>
+      </div>
+      <div class="text-center mt-3">
+          <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
+          <a href="#" class="btn btn-secondary btn-sm">Comprar</a>
+      </div>
+  </div>
+@endforeach
   <div class="row justify-content-center">
     <div class="col-2 border border-2 border-dark text-center my-1 mx-1" style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
       <img src="./image/batedeira.png" width="50%">

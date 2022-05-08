@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+});
+
+
 Route::middleware(['auth', 'admin'])->group(function(){
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');

@@ -27,7 +27,7 @@ Route::get('/', function () {
 })->name('home');
 
 // Produtos tela inicial
-Route::get('/', [eCommerceController::class, 'index'])->name('home');
+Route::get('/store', [eCommerceController::class, 'store'])->name('store');
 Route::get('/search/category/{category}', [eCommerceController::class, 'searchCategory'])->name('search-category');
 
 Route::middleware(['auth'])->group(function(){

@@ -28,14 +28,18 @@ Route::get('/', function () {
 
 // Produtos tela inicial
 Route::get('/store', [eCommerceController::class, 'store'])->name('store');
+
 Route::get('/search/category/{category}', [eCommerceController::class, 'searchCategory'])->name('search-category');
+Route::get('/search/product/', [eCommerceController::class, 'searchProduct'])->name('search.product');
+Route::get('/show/{product}', [eCommerceController::class, 'showProduct'])->name('show.product');
+
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 });
 
 // Autenticado ou admin
-Route::middleware(['auth', 'admin'])->group(function(){
+// Route::middleware(['auth', 'admin'])->group(function(){
     // Produtos
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
@@ -55,4 +59,4 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/category/trash', [CategoryController::class, 'trash'])->name('category.trash');
     Route::get('/category/trash/restore/{category}', [CategoryController::class, 'restore'])->name('category.restore');
     Route::get('/category/destroy/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
-});
+// });

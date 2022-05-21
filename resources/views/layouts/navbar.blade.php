@@ -13,12 +13,13 @@
 
                     <div class="col-8">
                         <div class="justify-content-center mt-2 row" style="margin-left: 70px;">
-                            <form class="d-flex col-8">
-                                <input class="form-control me-2" style="min-width: auto; " type="search" placeholder="Search"
-                                    aria-label="Search">
+                            <form action="{{ route('search.product') }}" class="d-flex col-8">
+
+                                <input type="text"  class="form-control me-2" style="min-width: auto; " placeholder="Search"
+                                    aria-label="Search" name="s">
                                 <button class="btn btn-outline"
                                     style="color:rgb(20, 124, 162); background-color: white; border-color:white;"
-                                    type="submit">Search</button>
+                                    type="submit">Buscar</button>
                             </form>
                         </div>
                     </div>

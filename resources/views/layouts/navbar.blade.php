@@ -15,7 +15,7 @@
                         <div class="justify-content-center mt-2 row" style="margin-left: 70px;">
                             <form action="{{ route('search.product') }}" class="d-flex col-8">
 
-                                <input type="text"  class="form-control me-2" style="min-width: auto; " placeholder="Search"
+                                <input type="text" class="form-control me-2" style="min-width: auto; " placeholder="Search"
                                     aria-label="Search" name="s">
                                 <button class="btn btn-outline"
                                     style="color:rgb(20, 124, 162); background-color: white; border-color:white;"
@@ -31,10 +31,18 @@
                         @if (Route::has('login'))
                             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                                 @auth
-                                    <span style="text-decoration: none; color: white; font-weight:lighter"> Olá, pessoa
+                                    <span style="text-decoration: none; color: white; font-weight:lighter">
+                                        Olá, pessoa
                                     </span>
-                                    <a href="{{ url('/dashboard') }}"
-                                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+
+                                        <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
+                                            {{ __('Log Out') }}
+                                        </button>
+                                    </form>
+                                    {{-- <a href="{{ url('/dashboard') }}"
+                                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a> --}}
                                 @else
                                     <a href="{{ route('login') }}"
                                         class="text-sm text-gray-700 dark:text-gray-500 underline">Entre</a>
@@ -43,6 +51,10 @@
                                             <a href="{{ route('register') }}"
                                                 class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                                         @endif --}}
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}"
+                                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                                    @endif
                                 @endauth
                             </div>
                         @endif

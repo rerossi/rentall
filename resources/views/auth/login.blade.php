@@ -23,8 +23,8 @@
             <input type="submit" value="continue">
 
         </form>
-        <span class="novo-usuario">
-            <a href="novoUser.php">
+        <span class="novo-usuario d-flex justify-content-center mt-3">
+            <a href="{{ route('register') }}">
                 Cadastre-se
             </a>
         </span>

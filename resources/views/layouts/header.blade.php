@@ -9,6 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,9 +27,9 @@
 
 <body>
     @yield('navbar')
-    <main class="content-fluid bg-transparent">
-        @yield('content')
-    </main>
+
+    @yield('content')
+
     @yield('footer')
 </body>
 

@@ -1,59 +1,44 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.header')
+@section('content')
+<link rel="stylesheet" href="../css/newUser.css">
+    <main class="container">
+        <h2> Novo Usuário </h2>
+         <!-- Session Status -->
+         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+         <!-- Validation Errors -->
+         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            <div class="input-field">
+                <x-input placeholder="Digite seu nome" id="nome"  class="block mt-1 w-full" type="text" name="name" 
+                :value="old('name')" required autofocus />
+                <div class="underline"> </div>
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            <div class="input-field">
+                <x-input placeholder="Digite seu sobrenome" id="sobrenome"  class="block mt-1 w-full" type="text" name="lastname"
+                :value="old('lastname')" required autofocus />
+                <div class="underline"> </div>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+            <div class="input-field">
+                <x-input id="email" placeholder="seuemail@exemplo.com" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <div class="underline"> </div>
             </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
+            <div class="input-field">
+                <x-input id="senha" placeholder="Digite sua senha" class="block mt-1 w-full" type="password" name="password" required
+                autocomplete="new-password" />
+                <div class="underline"> </div>
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
+            <div class="input-field">
+                <x-input placeholder="Confirme sua senha" id="confirma" class="block mt-1 w-full" type="password"
+                name="password_confirmation" required />
+                <div class="underline"> </div>
             </div>
+            <input class="mt-2" type="submit" value="Cadastrar">
+            <a class="text-center mt-3" style="text-decoration:none; color: #808080" href="{{ route('login') }}">
+                {{ __('Já registrado?') }}
+            </a>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </main>
+@endsection

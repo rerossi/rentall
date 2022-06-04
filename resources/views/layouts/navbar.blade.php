@@ -4,10 +4,8 @@
             <div class="container-fluid">
                 <div class="row w-100">
                     <div class="col-2">
-                        <a class="navbar-brand" href="#">
-                            logo rentall
-                            <img src="../imagens/logo-completo-branco.png" alt="" width="150px"
-                                class="d-inline-block align-text-center">
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            <img src="./image/logo-branco.png" alt="" class="d-inline-block align-text-center w-25">
                         </a>
                     </div>
 
@@ -25,36 +23,35 @@
                     </div>
 
                     <div class="col-2 text-end">
-
-
-
                         @if (Route::has('login'))
                             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                                 @auth
                                     <span style="text-decoration: none; color: white; font-weight:lighter">
-                                        Olá, pessoa
+                                        Olá, {{ Auth::user()->name }}
                                     </span>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
 
                                         <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                                            {{ __('Log Out') }}
+                                            {{-- {{ __('Log Out') }} --}}
+                                            <img src="./image/sair.png" width="25px" style="margin-left: 15px;">
+
                                         </button>
                                     </form>
                                     {{-- <a href="{{ url('/dashboard') }}"
                                         class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a> --}}
                                 @else
                                     <a href="{{ route('login') }}"
-                                        class="text-sm text-gray-700 dark:text-gray-500 underline">Entre</a>
+                                        class="text-sm text-gray-700 dark:text-gray-500 underline"><img src="./image/entrar.png" width="40px"></a>
 
                                     {{-- @if (Route::has('register'))
                                             <a href="{{ route('register') }}"
                                                 class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                                         @endif --}}
-                                    @if (Route::has('register'))
+                                    {{-- @if (Route::has('register'))
                                         <a href="{{ route('register') }}"
                                             class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                    @endif
+                                    @endif --}}
                                 @endauth
                             </div>
                         @endif

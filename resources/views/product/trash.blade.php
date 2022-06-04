@@ -2,11 +2,6 @@
 
 @section('content')
 
-
-<a clas="my-5" href="../telas/index.php">
-    <img src="../imagens/logo-branco.png" style="width: 100px; margin-left: -150px;">
-</a>
-
 <div class="text-center justify-content-center d-flex align-items-center pb-3 ">
     <button class="btn botao btn-dark"><a href="../telas/formProduto.php" class="text-decoration-none text-reset"> Cadastrar Produto </a></button>
 </div>

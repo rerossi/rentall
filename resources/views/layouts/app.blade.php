@@ -25,9 +25,9 @@
         <div class="container-fluid">
           <div class="row w-100">
             <div class="col-2">
-              <a class="navbar-brand" href="#">
-                logo rentall
-                <img src="../imagens/logo-completo-branco.png" alt="" width="150px" class="d-inline-block align-text-center">
+              <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="./image/logo-branco.png" alt=""
+                class="d-inline-block align-text-center w-25">
               </a>
             </div>
 
@@ -41,15 +41,9 @@
             </div>
 
             <div class="col-2 text-end">
-
-
               <span style="text-decoration: none; color: white; font-weight:lighter"> Olá, pessoa </span>
-              <a href="#" style="text-decoration: none;"> <img src="../imagens/sair.png" width="25px" style="margin-left: 15px;"> </a>
-
-
-              <a href="#"> <img src="../imagens/entrar.png" width="40px"> </a>
-
-
+              <a href="#" style="text-decoration: none;"> <img src="./image/sair.png" width="25px" style="margin-left: 15px;"> </a>
+              <a href="#"> <img src="./image/entrar.png" width="40px"> </a>
             </div>
           </div>
 

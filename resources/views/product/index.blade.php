@@ -34,10 +34,18 @@
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->description }}</td>
                             <td><img src="{{ asset($product->image) }}" style="width:100px;"></td>
-                            <td><button name="editar" class="btn btn-success my-2 link-light"> <a
-                                        href="{{ route('product.edit', $product->id) }}">Editar</a></button></td>
-                            <td><button name="excluir" class="btn btn-danger my-2 link-light"><a
-                                        href="{{ route('product.destroy', $product->id) }}">Excluir</a></button></td>
+                            <td>
+                                <a class="btn btn-success my-2 link-light"
+                                    href="{{ route('product.edit', $product->id) }}">
+                                    Editar
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger my-2 link-light"
+                                    href="{{ route('product.destroy', $product->id) }}">
+                                    Excluir
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

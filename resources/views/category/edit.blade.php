@@ -1,21 +1,23 @@
-@extends('layouts.app')
-
+@extends('layouts.header')
 @section('content')
-<form action="{{route('product.edit', $product->id)}}" method="POST">
-    @csrf
-    @method("PUT")
-    <label for="name">Nome do produto</label>
-    <input type="text" name="name" id="name" value="{{$product->name}}">
+    <link rel="stylesheet" href="../../css/app-rentall.css">
+    <link rel="stylesheet" href="../../css/formProduct.css">
+    <link rel="stylesheet" href="../../css/app.css">
 
-    <label for="description">Descrição</label>
-    <input type="text" name="description" id="description" value="{{$product->description}}">
-
-    <label for="price">Preço</label>
-    <input type="number" step="0.1" name="price" id="price" value="{{$product->price}}">
-
-    <label for="stock">estoque</label>
-    <input type="number" name="stock" id="stock" value="{{$product->stock}}">
-
-    <button type="submit">Enviar</button>
-</form>
+    <main class="container d-flex align-items-center">
+        <div class="row d-flex justify-content-center">
+            <div id="formCadastroProduto">
+                <h2> Editar Categoria </h2>
+                <form action="{{ route('category.edit', $category->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <label for="name">Nome da categoria</label>
+                    <input type="text" name="name" id="name" value="{{ $category->name }}">
+                    <div class="d-grid gap-2">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 @endsection

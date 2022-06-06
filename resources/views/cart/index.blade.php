@@ -39,6 +39,7 @@
                 <?php $total = 0.0 ?>
                 @foreach($itens as $item)
                     <tr>
+                        
                         <td>{{$item->Product->name}}</td>
                         <td>{{$item->Product->price}}</td>
                         <td>

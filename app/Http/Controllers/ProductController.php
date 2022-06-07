@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Cart;
 
 
 class ProductController extends Controller
@@ -67,6 +68,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product){
         $product->delete();
+        Cart::where('product_id', $product->id)->delete();
         return redirect(route('product.index'));
     }
 

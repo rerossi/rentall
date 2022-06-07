@@ -36,6 +36,8 @@ Route::get('/show/{product}', [eCommerceController::class, 'showProduct'])->name
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/{product}', [CartController::class, 'store'])->name('cart.store');
+    Route::delete('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
     Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 });

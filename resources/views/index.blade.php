@@ -2,7 +2,7 @@
 @extends('layouts.navbar')
 @section('content')
     <section class="pt-2">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div id="carouselExampleDark" class="carousel  slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -37,19 +37,18 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-
         </div>
     </section>
 
     <section class="my-5">
         <div class="row  justify-content-center min-width:50%">
-            <a href="{{ route('search-category', 3) }}">
-                <div class=" p-3 col-2 border border-2 border-dark text-center my-1 mx-1"
-                    style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
+            <div class=" p-1 col-2 border border-2 border-dark text-center my-1 mx-1"
+                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
+                <a href="{{ route('search-category', 3) }}">
                     <img src="./image/ferramentas.png" width="40%" class="my-1">
                     <h3 class="fs-4">Ferramentas</h3>
-                </div>
-            </a>
+                </a>
+            </div>
             <div class=" p-1 col-2 border border-2 border-dark text-center my-1 mx-1"
                 style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
                 <img src="./image/controle-de-video-game.png" width="50%">

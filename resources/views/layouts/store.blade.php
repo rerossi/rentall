@@ -2,93 +2,35 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>E-commerce</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Rentall</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+
+    <!-- CSS Rentall -->
+    <link rel="stylesheet" href="{{ asset('/css/app-rentall.css') }}">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    e-Commerce
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    @yield('navbar')
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarCategoria" role="button" data-bs-toggle="dropdown">Categorias</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarCategoria">
-                                @foreach (\App\Models\Category::all() as $category)
-                                    <a class="dropdown-item" href="{{ route('search-category', $category->id) }}">{{ $category->name }}</a>
-                                @endforeach
-                            </ul>
-                        </li>
+    @yield('content')
 
-                    </ul>
-
-                    <ul class="navbar-nav ms-auto">
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Registrar</a>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarUser" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ Auth::user()->name }}
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarUser">
-                                    <a href="#" class="dropdown-item">Meu Perfil</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main class="py-4 container">
-        @if (session()->has('success'))
-            <div class="alert alert-success">{{ session()->get('success') }}</div>
-        @endif
-        @if (session()->has('error'))
-            <div class="alert alert-danger">{{ session()->get('error') }}</div>
-        @endif
-        @yield('content')
-    </main>
-    <footer class="container p-5 bg-primary text-white">
-        <div class="row">
-            <div class="col-sm-8 mb-5">
-                <h2 class="h4">Localização:</h2>
-                <address>Rua Lorem, ipsum dolor, 386<br>
-                Lorem, ipsum - Lorem, LR<br>
-                CEP: 00000-000<br>
-                Telefone: (11) 8888-8888
-                </address>
-            </div>
-            <div class="col-sm-4">
-                <h2 class="h4">Horario de Funcionamento para loja fisica</h2>
-                <ul class="list-unstyled">
-                    <li>Segunda - Sexta: 9:00 - 20:00</li>
-                    <li>Sábado - 9:00 - 16:00</li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    @yield('footer')
 </body>
 
 </html>

@@ -24,7 +24,7 @@
 
                     <div class="col-2 text-end">
                         @if (Route::has('login'))
-                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block d-flex justify-content-end align-items-center">
                                 @auth
                                     <span style="text-decoration: none; color: white; font-weight:lighter">
                                         Olá, {{ Auth::user()->name }}
@@ -32,7 +32,7 @@
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
 
-                                        <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
+                                        <button type="submit" class="btn">
                                             {{-- {{ __('Log Out') }} --}}
                                             <img src="./image/sair.png" width="25px" style="margin-left: 15px;">
 

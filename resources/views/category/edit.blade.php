@@ -1,8 +1,8 @@
 @extends('layouts.header')
 @section('content')
-    <link rel="stylesheet" href="../../css/app-rentall.css">
+
     <link rel="stylesheet" href="../../css/formProduct.css">
-    <link rel="stylesheet" href="../../css/app.css">
+
 
     <main class="container d-flex align-items-center">
         <div class="row d-flex justify-content-center">

@@ -19,10 +19,11 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-    <link rel="stylesheet" href="../css/app.css">
 
     <!-- CSS Rentall -->
-    <link rel="stylesheet" href="../css/app-rentall.css">
+    {{-- <link rel="stylesheet" href="{{ asset('/css/app.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('/css/app-rentall.css') }}">
+
 </head>
 
 <body>

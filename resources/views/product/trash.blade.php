@@ -24,11 +24,11 @@
                         <td>{{ $product->description }}</td>
                         <td><img src="{{ asset($product->image) }}" style="width:100px;"></td>
                         <td>
-                            <button name="editar" class="btn btn-success my-2">
-                                <a href="{{ route('product.restore', $product->id) }}">
-                                    Restaurar
-                                </a>
-                            </button>
+
+                            <a class="btn btn-success my-2" href="{{ route('product.restore', $product->id) }}">
+                                Restaurar
+                            </a>
+
                         </td>
                         </tr>
                     @endforeach

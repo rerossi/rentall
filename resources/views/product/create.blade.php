@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="d-grid gap-2">
-                        <input type="submit" value="Cadastrar">
+                        <input class="btn" type="submit" value="Cadastrar">
                     </div>
                 </form>
             </div>

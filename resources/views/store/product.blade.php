@@ -2,40 +2,57 @@
 @extends('layouts.navbar')
 
 @section('content')
-    <section>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item" aria-current="page"><a
-                        href="{{ route('search-category', $product->Category->id) }}">{{ $product->Category->name }}</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
-            </ol>
-        </nav>
-    </section>
-    <section class="container py-4">
-        <div class="row">
-            <div class="col-4 mx-auto text-center">
-                <img src="{{ asset($product->image) }}" class="img-fluid">
-            </div>
-            <div class="mx-auto col-8 text-center">
-                <h2 class="text-uppercase">{{ $product->name }}</h2>
-                <p class="text-muted">{{ $product->description }}</p>
-                <div class="text-center">
-                    <span>{{ $product->price }}</span>
-                </div>
-                <form action="{{ route('cart.store', $product->id) }}" method="POST" style="display:inline">
-                    @csrf
-                    <button type="submit" class="btn btn-primary btn-sm">Comprar</button>
-                </form>
-                {{-- <div class="text-center mt-5">
-                    <h3>Tags</h3>
-                    @foreach ($product->Tags as $tag)
-                        <a class="btn btn-sm btn-secondary"
-                            href="{{ route('search-tag', $tag->id) }}">{{ $tag->name }}</a>
-                    @endforeach
-                </div> --}}
-            </div>
-        </div>
-    </section>
+    <main class="d-flex justify-content-center h-100 align-items-center">
+        <section class="padding-y bg-light shadow-sm rounded py-3 " style="height: 45%;">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb ">
+                        <li class="breadcrumb-item" aria-current="page">
+                            <a class="text-decoration-none text-muted"
+                                href="{{ route('search-category', $product->Category->id) }}">{{ $product->Category->name }}</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
+                    </ol>
+                </nav>
+                <div class="row">
+                    <aside class="col-lg-6">
+                        <article class="gallery-wrap">
+                            <div class="img-big-wrap img-thumbnail"> <img class="w-100" src="{{ asset($product->image) }}">
+                            </div>
+                        </article> <!-- gallery-wrap .end// -->
+                    </aside>
+                    <div class="col-lg-6">
+                        <article class="ps-lg-3">
+                            <h4 class="title text-dark">{{ $product->name }}</h4>
+                            <div class="rating-wrap my-3">
+                                <ul style="list-style: none;" class="rating-stars p-0">
+                                    <li style="width:80%" class="stars-active"> <img
+                                            src="{{ asset('/image/stars-active.svg') }}" alt="">
+                                        <b class="label-rating text-warning">5.0</b>
+                                    </li>
+
+                                </ul>
+                            </div> <!-- rating-wrap.// -->
+                            <div class="mb-3">
+                                <var class="price h5">
+                                    R${{ $product->price }}
+                                </var>
+                            </div>
+                            <p>{{ $product->description }}</p>
+
+                            <a href="#" class="btn btn-warning text-white">
+                                <i class="me-2 fa fa-shopping-basket"></i>
+                                <form action="{{ route('cart.store', $product->id) }}" method="POST"
+                                    style="display:inline">
+                                    @csrf
+                                    <button class="p-0 m-0 btn text-white" type="submit">Adicionar ao carrinho</button>
+                                </form>
+                            </a>
+                        </article> <!-- product-info-aside .// -->
+                    </div> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!-- container .// -->
+        </section>
+    </main>
 @endsection
 @extends('layouts.footer')

@@ -10,7 +10,7 @@
                     method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3 ">
-                        <input type="text" name="name" id="titulo" class="form-control" placeholder="Titulo Produto"
+                        <input autofocus type="text" name="name" id="titulo" class="form-control" placeholder="Titulo Produto"
                             required>
                     </div>
 

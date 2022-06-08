@@ -12,7 +12,7 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-3 ">
-                        <input type="text" name="name" id="titulo" class="form-control" placeholder="Titulo Produto"
+                        <input autofocus type="text" name="name" id="titulo" class="form-control" placeholder="Titulo Produto"
                             value="{{ $product->name }}" required>
                     </div>
 

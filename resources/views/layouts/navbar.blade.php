@@ -5,7 +5,8 @@
                 <div class="row w-100 mt-2 d-flex align-items-center">
                     <div class="col-3 col-lg-1 order-lg-0 ms-lg-5">
                         <a class="navbar-brand" href="{{ route('home') }}">
-                            <img class="d-inline-block align-text-center" src="./image/logo-branco.png" alt="">
+                            <img class="d-inline-block align-text-center" src="{{ asset('/image/logo-branco.png') }}"
+                                alt="">
                         </a>
                     </div>
                     <div class="col d-flex justify-content-end">
@@ -51,12 +52,13 @@
                                         </form>
                                     @else
                                         <a href="{{ route('login') }}"
-                                            class="text-sm text-gray-700 dark:text-gray-500 underline"><img
-                                                src="./image/entrar.png" width="40px"></a>
+                                            class="text-sm text-gray-700 dark:text-gray-500 underline">
+                                            <img src="{{ asset('/image/entrar.png') }}" width="40px">
+                                        </a>
                                     @endauth
                                 @endif
                             </li>
-                            <li class="nav-item dropdown ps-3">
+                            <li class="nav-item dropdown ps-3 d-none d-lg-block">
                                 @if (Route::has('login'))
                                     <div
                                         class="hidden fixed top-0 right-0 sm:block d-flex justify-content-end align-items-center">
@@ -68,7 +70,7 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a class="dropdown-item" href="#">
+                                                    <a class="dropdown-item ps-2">
                                                         <form class="m-0 p-0" method="POST"
                                                             action="{{ route('logout') }}">
                                                             @csrf
@@ -88,7 +90,7 @@
                                         @else
                                             <a href="{{ route('login') }}"
                                                 class="text-sm text-gray-700 dark:text-gray-500 underline">
-                                                <img src="./image/entrar.png" width="40px">
+                                                <img src="{{ asset('/image/entrar.png') }}" width="40px">
                                             </a>
                                         @endauth
                                     </div>

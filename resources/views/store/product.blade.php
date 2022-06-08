@@ -1,4 +1,6 @@
-@extends('layouts.store')
+@extends('layouts.header')
+@extends('layouts.navbar')
+
 @section('content')
     <section>
         <nav aria-label="breadcrumb">
@@ -36,3 +38,4 @@
         </div>
     </section>
 @endsection
+@extends('layouts.footer')

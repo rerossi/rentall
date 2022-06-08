@@ -1,69 +1,25 @@
 @section('navbar')
     <header>
-        <nav class="navbar navbar-light " style="background-color:rgb(20, 124, 162);">
-            <div class="container-fluid">
-                <div class="row w-100">
-                    <div class="col-2">
+        <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color:rgb(20, 124, 162);">
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="row w-100 mt-2 d-flex align-items-center">
+                    <div class="col-3 col-lg-1 order-lg-0 ms-lg-5">
                         <a class="navbar-brand" href="{{ route('home') }}">
-                            <img src="./image/logo-branco.png" alt="" class="d-inline-block align-text-center w-25">
+                            <img class="d-inline-block align-text-center" src="./image/logo-branco.png" alt="">
                         </a>
                     </div>
-
-                    <div class="col-8">
-                        <div class="justify-content-center mt-2 row" style="margin-left: 70px;">
-                            <form action="{{ route('search.product') }}" class="d-flex col-8">
-
-                                <input type="text" class="form-control me-2" style="min-width: auto; " placeholder="Search"
-                                    aria-label="Search" name="s">
-                                <button class="btn btn-outline"
-                                    style="color:rgb(20, 124, 162); background-color: white; border-color:white;"
-                                    type="submit">Buscar</button>
-                            </form>
-                        </div>
+                    <div class="col d-flex justify-content-end">
+                        <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
+                    <div class="collapse navbar-collapse col-lg-8 " id="navbarSupportedContent">
+                        <ul
+                            class="navbar-nav me-auto  mr-lg-5 mb-2 mb-lg-0 order-lg-3 w-100 d-lg-flex justify-content-lg-end">
 
-                    <div class="col-2 text-end">
-                        @if (Route::has('login'))
-                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block d-flex justify-content-end align-items-center">
-                                @auth
-                                    <span style="text-decoration: none; color: white; font-weight:lighter">
-                                        Olá, {{ Auth::user()->name }}
-                                    </span>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-
-                                        <button type="submit" class="btn">
-                                            {{-- {{ __('Log Out') }} --}}
-                                            <img src="./image/sair.png" width="25px" style="margin-left: 15px;">
-
-                                        </button>
-                                    </form>
-                                    {{-- <a href="{{ url('/dashboard') }}"
-                                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a> --}}
-                                @else
-                                    <a href="{{ route('login') }}"
-                                        class="text-sm text-gray-700 dark:text-gray-500 underline"><img src="./image/entrar.png" width="40px"></a>
-
-                                    {{-- @if (Route::has('register'))
-                                            <a href="{{ route('register') }}"
-                                                class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                        @endif --}}
-                                    {{-- @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"
-                                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                    @endif --}}
-                                @endauth
-                            </div>
-                        @endif
-
-
-                    </div>
-                </div>
-
-                <div class="row w-100">
-                    <div class="col-12">
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item dropdown">
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                     aria-expanded="false" style="color:white; font-weight:lighter" id="navbarDropdown">
                                     Categorias
@@ -74,19 +30,81 @@
                                     <li><a class="dropdown-item" href="#">Eletroportateis</a></li>
                                     <li><a class="dropdown-item" href="#">Ferramentas</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="#" style="color:white; font-weight:lighter">Catálogo</a>
+                                <a class="nav-link" href="{{ route('product.create') }}"
+                                    style="color:white; font-weight:lighter">
+                                    Cadastrar produtos
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" style="color:white; font-weight:lighter"> Meus
-                                    Produtos </a>
+                            <li class="d-lg-none">
+                                @if (Route::has('login'))
+                                    @auth
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+
+                                            <button type="submit" class="btn p-0"
+                                                style="color:white; font-weight:lighter">
+                                                {{-- {{ __('Log Out') }} --}}
+                                                Sair
+                                            </button>
+                                        </form>
+                                    @else
+                                        <a href="{{ route('login') }}"
+                                            class="text-sm text-gray-700 dark:text-gray-500 underline"><img
+                                                src="./image/entrar.png" width="40px"></a>
+                                    @endauth
+                                @endif
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" style="color:white; font-weight:lighter">Cadastrar
-                                    produto</a>
+                            <li class="nav-item dropdown ps-3">
+                                @if (Route::has('login'))
+                                    <div
+                                        class="hidden fixed top-0 right-0 sm:block d-flex justify-content-end align-items-center">
+                                        @auth
+                                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                                aria-expanded="false" style="color:white; font-weight:lighter"
+                                                id="navbarDropdown">
+                                                Olá, {{ Auth::user()->name }}
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item">
+                                                    <a class="dropdown-item" href="#">
+                                                        <form class="m-0 p-0" method="POST"
+                                                            action="{{ route('logout') }}">
+                                                            @csrf
+                                                            <button type="submit" class="btn d-flex mx-0 px-0">
+                                                                {{-- {{ __('Log Out') }} --}}
+                                                                Sair
+                                                            </button>
+                                                        </form>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-dark" href="#">
+                                                        Meus Produtos
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        @else
+                                            <a href="{{ route('login') }}"
+                                                class="text-sm text-gray-700 dark:text-gray-500 underline">
+                                                <img src="./image/entrar.png" width="40px">
+                                            </a>
+                                        @endauth
+                                    </div>
+                                @endif
                             </li>
                         </ul>
+
+                        <form class="rentall-form-search order-lg-2 col-lg-3 d-flex"
+                            action="{{ route('search.product') }}" class="d-flex">
+                            <input type="text" class="form-control me-2" style="min-width: auto; " placeholder="Buscar"
+                                aria-label="Buscar" name="s">
+                            <button class="btn btn-outline"
+                                style="color:rgb(20, 124, 162); background-color: white; border-color:white;"
+                                type="submit">Buscar</button>
+                        </form>
+
                     </div>
                 </div>
             </div>

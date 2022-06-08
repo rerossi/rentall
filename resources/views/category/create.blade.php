@@ -9,7 +9,7 @@
                 <form action="{{ route('category.store') }}" method="POST">
                     @csrf
                     <label for="category">Nome da Categoria:</label>
-                    <input id="category" name="name" type="text">
+                    <input autofocus id="category" name="name" type="text">
                     <div class="d-grid gap-2">
                         <button type="submit">Enviar</button>
                     </div>

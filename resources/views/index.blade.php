@@ -41,61 +41,74 @@
     </section>
 
     <section class="my-5">
-        <div class="row  justify-content-center min-width:50%">
-            <div class=" p-1 col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <a href="{{ route('search-category', 3) }}">
-                    <img src="./image/ferramentas.png" width="40%" class="my-1">
-                    <h3 class="fs-4">Ferramentas</h3>
-                </a>
-            </div>
-            <div class=" p-1 col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/controle-de-video-game.png" width="50%">
-                <h3 class="fs-4">games</h3>
-            </div>
-            <div class=" p-2 col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/informatica (2).png" width="50%">
-                <h3 class="fs-4">Informatica</h3>
-            </div>
-            <div class=" p-2 col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/sports.png" width="50%">
-                <h3 class="fs-4">Esportes</h3>
-            </div>
-            <div class=" p-2 col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/instrumentos-musicais.png" width="50%">
-                <h3 class="fs-4">Instrumentos Musicais</h3>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/batedeira.png" width="50%">
-                <h3 class="fs-4">Eletroportateis</h3>
-            </div>
-            <div class="col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/moto.png" width="50%">
-                <h3 class="fs-4">Veiculos</h3>
-            </div>
-            <div class="col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
+        <div class="container d-flex justify-content-center">
+            <div class="row d-flex justify-content-center ">
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 1) }}">
+                            <img src="./image/ferramentas.png" class="my-1">
+                            <h3 class="text-dark">Ferramentas</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 2) }}">
+                            <img src="./image/controle-de-video-game.png">
+                            <h3 class="text-dark">Games</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 3) }}">
+                            <img src="./image/informatica.png">
+                            <h3 class="text-dark">Informatica</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 4) }}">
+                            <img src="./image/sports.png">
+                            <h3 class="text-dark">Esportes</h3>
+                        </a>
+                    </div>
+                </div>
+        
 
-                <img src="./image/camera.png" width="50%">
-                <h3 class="fs-4">Audio e Video</h3>
-            </div>
-            <div class="col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/moda.png" width="50%">
-                <h3>Moda</h3>
-            </div>
-            <div class="col-2 border border-2 border-dark text-center my-1 mx-1"
-                style="min-width:140px; max-width:180px; max-height:200px; min-height:150px;">
-                <img src="./image/brinquedos-do-bebe.png" width="50%">
-                <h3>Brinquedos</h3>
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 5) }}">
+                            <img src="./image/instrumentos-musicais.png">
+                            <h3 class="text-dark">Instrumentos Musicais</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 8) }}">
+                            <img src="./image/camera.png">
+                            <h3 class="text-dark">Audio e Video</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 9) }}">
+                            <img src="./image/moda.png">
+                            <h3 class="text-dark">Moda</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="border border-2 border-dark w-75">
+                        <a class="text-decoration-none" href="{{ route('search-category', 10) }}">
+                            <img src="./image/brinquedos-do-bebe.png">
+                            <h3 class="text-dark">Brinquedos</h3>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

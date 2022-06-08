@@ -3,6 +3,17 @@ body {
     height: 100vh;
 }
 
+.home-category-img {
+    width: 50%;
+    max-width: 10vw;
+}
+
+.rentall-form-search,
+.rentall-form-search input {
+    width: 40vw !important;
+}
+
+
 #formCadastroProduto {
     background: #fff;
     padding: 2rem;

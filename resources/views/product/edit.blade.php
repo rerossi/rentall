@@ -44,7 +44,7 @@
                     <div class="input-group ">
                         <!-- <input  type="file" class="form-control" name="upload" id="upload" aria-describedby="inputGroupFileAddon04" aria-label="Upload" > -->
                         <input type="file" name="image" id="image" class="form-control" placeholder="image Produto"
-                            value="{{ $product->image }}" required>
+                            value="{{ $product->image }}">
 
                     </div>
                     <div class="d-grid gap-2">

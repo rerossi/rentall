@@ -12,7 +12,7 @@
                     @csrf
                     @method('PUT')
                     <label for="name">Nome da categoria</label>
-                    <input type="text" name="name" id="name" value="{{ $category->name }}">
+                    <input autofocus type="text" name="name" id="name" value="{{ $category->name }}">
                     <div class="d-grid gap-2">
                         <button type="submit">Enviar</button>
                     </div>

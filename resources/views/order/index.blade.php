@@ -30,4 +30,4 @@
         </section>
     @endforeach
 @endsection
-@extends('layouts.footer')0
+@extends('layouts.footer')

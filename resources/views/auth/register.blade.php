@@ -37,7 +37,7 @@
             </div>
             <input class="mt-2" type="submit" value="Cadastrar">
             <a class="text-center mt-3" style="text-decoration:none; color: #808080" href="{{ route('login') }}">
-                {{ __('Já registrado?') }}
+                {{ __('voltar') }}
             </a>
         </form>
     </main>

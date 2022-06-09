@@ -23,7 +23,7 @@
                     <label for="state"><b>Estado</b></label>
                     <input type="text" class="form-control rounded border border-2 border-primary" name="state" placeholder="Estado" required>
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary my-2 float-end ">Comprar</button>
+                <button type="submit" class="btn btn-lg btn-primary my-2 float-end ">Finalizar pedido</button>
             </form>
         </div>
         <div class="col-8">

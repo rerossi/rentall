@@ -1,6 +1,12 @@
 @extends('layouts.header')
 @extends('layouts.navbar')
 @section('content')
+
+@if($products->count() == 0)
+
+<h1 class=" text-center mt-5 vh-100">Nenhum produto encontrado</h1>
+
+@endif
     <section class="container py-4">
         <div class="row">
             <div class="mx-auto col-10 text-center">

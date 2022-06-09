@@ -3,7 +3,7 @@
 @section('content')
 @if($orders->count() == 0)
 
-<h1 class=" text-center mt-5 vh-100">você não tem nenhum pedido ativo</h1>
+<h1 class=" text-center mt-5 vh-100">você ainda nao fez nenhum pedido</h1>
 
 @endif
     @foreach($orders as $order)

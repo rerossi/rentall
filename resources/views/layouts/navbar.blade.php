@@ -78,6 +78,13 @@
                                                         Meus Produtos
                                                     </a>
                                                 </li>
+                                                @if (Auth::user()->isAdmin())
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-dark" href="{{ route('category.index') }}">
+                                                        Categorias
+                                                    </a>
+                                                </li>
+                                                @endif
                                                 <li class="nav-item">
                                                     <a class="nav-link text-dark" href="{{ route('order.index') }}">
                                                         Pedidos

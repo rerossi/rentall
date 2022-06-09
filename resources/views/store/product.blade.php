@@ -1,6 +1,8 @@
 @extends('layouts.header')
 @extends('layouts.navbar')
 
+
+
 @section('content')
     <main class="d-flex justify-content-center h-100 align-items-center">
         <section class="padding-y bg-light shadow-sm rounded py-3 " style="height: 45%;">

@@ -20,7 +20,7 @@
                             <div class="img-big-wrap d-flex justify-content-center">
                                  <img style="max-width:30%" src="{{ asset($product->image) }}">
                             </div>
-                        </article> <!-- gallery-wrap .end// -->
+                        </article>
                     </aside>
                     <div class="col-lg-6">
                         <article class="ps-lg-3">
@@ -49,10 +49,10 @@
                                     <button class="p-0 m-0 btn text-white" type="submit">Adicionar ao carrinho</button>
                                 </form>
                             </a>
-                        </article> <!-- product-info-aside .// -->
-                    </div> <!-- col.// -->
-                </div> <!-- row.// -->
-            </div> <!-- container .// -->
+                        </article>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 @endsection

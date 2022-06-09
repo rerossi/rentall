@@ -1,7 +1,11 @@
 @extends('layouts.header')
 @extends('layouts.navbar')
 @section('content')
+@if($orders->count() == 0)
 
+<h1 class=" text-center mt-5 vh-100">você não tem nenhum pedido ativo</h1>
+
+@endif
     @foreach($orders as $order)
         <section class="container mt-5">
             <div>

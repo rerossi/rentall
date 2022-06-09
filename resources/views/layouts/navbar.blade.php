@@ -84,6 +84,11 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
+                                                    <a class="nav-link text-dark" href="{{ route('user.editgit ') }}">
+                                                        Perfil
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
                                                     <a class="dropdown-item ps-2">
                                                         <form class="m-0 p-0" method="POST"
                                                             action="{{ route('logout') }}">

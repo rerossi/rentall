@@ -14,11 +14,11 @@ require __DIR__ . '/auth.php';
 Route::get('/', function () {
     return view('index');
 })->name('home');
+
 Route::get('/store', [eCommerceController::class, 'store'])->name('store');
 Route::get('/search/category/{category}', [eCommerceController::class, 'searchCategory'])->name('search-category');
 Route::get('/search/product/', [eCommerceController::class, 'searchProduct'])->name('search.product');
 Route::get('/show/{product}', [eCommerceController::class, 'showProduct'])->name('show.product');
-
 
 Route::middleware(['auth'])->group(function () {
     // Carrinho
@@ -38,9 +38,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product/trash/restore/{product}', [ProductController::class, 'restore'])->name('product.restore');
     Route::get('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
-    Route::get('/user', [UserController::class, 'index'])->name('user.index');
-    Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('user.edit');
-    Route::put('/user/edit/{user}', [UserController::class, 'update'])->name('user.update');
+    //Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/user', [UserController::class, 'update'])->name('user.update');
 });
 
 

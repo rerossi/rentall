@@ -12,25 +12,16 @@ class UserController extends Controller
         return view('user.index')->with('user', User::where('id', Auth()->user()->id)->get());
     }
 
-    public function edit(User $user)
+    public function edit()
     {
-        return view('user.edit')->with('user', $user);
+        return view('user.edit')->with('user', Auth()->user());
     }
 
-    public function update(User $user, Request $request)
+    public function update(Request $request)
     {
-
-        // $user->update($request->all());
-        // return redirect(route('user.index', $user->id));
-
-        $request->validate([
-            'name' => 'required',
-            'lastname' => 'required',
-            'email' => 'required',
-        ]);
-
+        $user = Auth()->user();   
         $user->update($request->all());
 
-        return redirect(route('user.index', $user->id));
+        return redirect(route('user.edit'));
     }
 }

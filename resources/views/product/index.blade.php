@@ -1,11 +1,14 @@
 @extends('layouts.header')
-
+@extends('layouts.navbar_form')
 @section('content')
     <main class="d-flex flex-column justify-content-center mt-5">
         <div class="text-center justify-content-center d-flex align-items-center pb-3 mt-3">
 
             <a class="btn botao btn-dark" href="{{ route('product.create') }}" class="text-decoration-none text-reset">
                 Cadastrar Produto
+            </a>
+            <a class="btn botao btn-warning ms-3" href="{{ route('product.trash') }}" class="text-decoration-none text-reset">
+                Lixeira Produtos
             </a>
 
         </div>

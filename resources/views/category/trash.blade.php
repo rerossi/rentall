@@ -1,7 +1,14 @@
 @extends('layouts.header')
+@extends('layouts.navbar_form')
 
 @section('content')
-    <main style="height: 100vh;" class="d-flex flex-column justify-content-center">
+    <main style="height: 80vh;" class="d-flex flex-column justify-content-center">
+        <div class="text-center justify-content-center d-flex align-items-center pb-3">
+            <a style="color: white !important;" class="btn text-white btn-dark text-decoration-none text-reset"
+                href="{{ route('category.index') }}">
+                Categorias
+            </a>
+        </div>
         <section class="container fundo rounded-3" style="background-color: rgb(210, 210, 210)">
             <h2 class="text-center h2 py-2"> Lixeira Categoria </h2>
 

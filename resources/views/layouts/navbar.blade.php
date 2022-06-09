@@ -32,12 +32,6 @@
                                     <li><a class="dropdown-item" href="#">Ferramentas</a></li>
                                 </ul>
                             </li> --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('product.create') }}"
-                                    style="color:white; font-weight:lighter">
-                                    Cadastrar produtos
-                                </a>
-                            </li>
                             <li class="d-lg-none">
                                 @if (Route::has('login'))
                                     @auth

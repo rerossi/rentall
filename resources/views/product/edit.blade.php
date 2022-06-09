@@ -6,7 +6,7 @@
         <div class="row d-flex justify-content-center">
             <div id="formCadastroProduto">
                 <h2> Editar Produto </h2>
-                <form class="needs-validation" action="{{ route('product.edit', $product->id) }}" method="POST"
+                <form class="needs-validation d-flex flex-column" action="{{ route('product.edit', $product->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -51,7 +51,7 @@
                     </div>
                    
                    
-                    <a class="text-center mt-5" style="text-decoration:none; color: #808080" href="{{ route('product.index') }}">
+                    <a class="text-center mt-3" style="text-decoration:none; margin-left:20px; color: #808080" href="{{ route('product.index') }}">
                         {{ __('voltar') }}
                     </a>
             

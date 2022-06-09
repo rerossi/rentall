@@ -80,6 +80,16 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
+                                                    <a class="nav-link text-dark" href="{{ route('product.index') }}">
+                                                        Meus Produtos
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-dark" href="{{ route('order.index') }}">
+                                                        Pedidos
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
                                                     <a class="dropdown-item ps-2">
                                                         <form class="m-0 p-0" method="POST"
                                                             action="{{ route('logout') }}">
@@ -91,11 +101,7 @@
                                                         </form>
                                                     </a>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link text-dark" href="#">
-                                                        Meus Produtos
-                                                    </a>
-                                                </li>
+                                              
                                             </ul>
                                         @else
                                             <a href="{{ route('login') }}"

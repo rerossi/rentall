@@ -50,9 +50,14 @@
                     <div class="d-grid gap-2">
                         <input class="btn" type="submit" value="Enviar">
                     </div>
-
+                   
+                   
+                    <a class="text-center mt-5" style="text-decoration:none; color: #808080" href="{{ route('product.index') }}">
+                        {{ __('voltar') }}
+                    </a>
             
                 </form>
+
             </div>
         </div>
     </main>

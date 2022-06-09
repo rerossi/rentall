@@ -12,6 +12,15 @@ main h2 {
     position: relative;
 }
 
+body {
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #247ba0 50%, white 50%);
+}
 
 main h2::before {
     content: '';
@@ -22,9 +31,7 @@ main h2::before {
     left: 0px;
     border-radius: 8px;
     background: #00a8ff;
-
 }
-
 
 form input[type="submit"] {
     margin-top: 2rem;
@@ -41,5 +48,4 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     letter-spacing: 0.5px;
     background: linear-gradient(to right, #00ced1, #00a8ff);
-
 }

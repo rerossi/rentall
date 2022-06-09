@@ -1,10 +1,11 @@
 @extends('layouts.header')
 @section('content')
-    <link rel="stylesheet" href="../css/formProduct.css">
+  
+    <link rel="stylesheet" href="../css/login.css">
 
     <main class="container d-flex align-items-center">
         <div class="row d-flex justify-content-center">
-            <div id="formCadastroProduto">
+            <div id="">
                 <h2> Novo Produto </h2>
                 <form class="needs-validation" enctype="multipart/form-data" action="{{ route('product.store') }}"
                     method="POST" enctype="multipart/form-data">
@@ -45,6 +46,10 @@
                     <div class="d-grid gap-2">
                         <input class="btn" type="submit" value="Cadastrar">
                     </div>
+
+                    <a class="text-center mt-3" style="text-decoration:none; margin-left:20px; color: #808080" href="{{ route('product.index') }}">
+                        {{ __('voltar') }}
+                    </a>
                 </form>
             </div>
         </div>

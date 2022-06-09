@@ -18,7 +18,7 @@
                     <aside class="col-lg-6">
                         <article class="gallery-wrap">
                             <div class="img-big-wrap d-flex justify-content-center">
-                                 <img class="w-50" src="{{ asset($product->image) }}">
+                                 <img style="max-width:30%" src="{{ asset($product->image) }}">
                             </div>
                         </article> <!-- gallery-wrap .end// -->
                     </aside>

@@ -25,7 +25,7 @@
                             </a>
                             <form action="{{ route('cart.store', $product->id) }}" method="POST" style="display:inline">
                                 @csrf
-                                <button type="submit" class="btn btn-success btn-sm">Comprar</button>
+                                <button type="submit" class="btn btn-success btn-sm">Adicionar ao carrinho</button>
                             </form>
                         </div>
                     </div>

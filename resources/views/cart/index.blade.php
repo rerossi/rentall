@@ -1,4 +1,5 @@
-@extends('layouts.store')
+@extends('layouts.header')
+@extends('layouts.navbar')
 @section('content')
 <section class="container mt-5">
     <div class="row">

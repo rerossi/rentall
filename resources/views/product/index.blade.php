@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
-    <main style="height: 100vh;" class="d-flex flex-column justify-content-center">
+    <main class="d-flex flex-column justify-content-center mt-5">
         <div class="text-center justify-content-center d-flex align-items-center pb-3 mt-3">
 
             <a class="btn botao btn-dark" href="{{ route('product.create') }}" class="text-decoration-none text-reset">

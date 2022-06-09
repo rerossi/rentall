@@ -7,6 +7,11 @@ body {
     max-width: 10vw;
 }
 
+.fa-shopping-cart:before{
+    color: white;
+    font-weight: lighter;
+}
+
 .rentall-form-search,
 .rentall-form-search input {
     width: 55vw !important;

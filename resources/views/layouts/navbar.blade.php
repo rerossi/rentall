@@ -16,7 +16,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
-                    <div class="collapse navbar-collapse col-lg-8 " id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse col-lg-8 pb-3" id="navbarSupportedContent">
                         <ul
                             class="navbar-nav me-auto  mr-lg-5 mb-2 mb-lg-0 order-lg-3 w-100 d-lg-flex justify-content-lg-end">
 
@@ -50,23 +50,33 @@
                                                 Sair
                                             </button>
                                         </form>
-                                    @else
-                                        <a href="{{ route('login') }}"
-                                            class="text-sm text-gray-700 dark:text-gray-500 underline">
-                                            <img src="{{ asset('/image/entrar.png') }}" width="40px">
-                                        </a>
-                                    @endauth
-                                @endif
-                            </li>
+                                </li>
+                                <li class="d-lg-none mt-2">
+                                    <a href="{{ route('cart.index') }}"
+                                        class="text-white text-decoration-none mt-5" style="color:white; font-weight:lighter">
+                                        Meu carrinho
+                                    </a>
+                                </li>
+                            @else
+                                <li class="d-lg-none">
+                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">
+                                        <img src="{{ asset('/image/entrar.png') }}" width="40px">
+                                    </a>
+                                </li>
+                            @endauth
+                            @endif
                             <li class="nav-item dropdown ps-3 d-none d-lg-block">
                                 @if (Route::has('login'))
                                     <div
-                                        class="hidden fixed top-0 right-0 sm:block d-flex justify-content-end align-items-center">
+                                        class="hidden top-0 right-0 sm:block d-flex justify-content-end align-items-center">
                                         @auth
                                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                                 aria-expanded="false" style="color:white; font-weight:lighter"
                                                 id="navbarDropdown">
                                                 Olá, {{ Auth::user()->name }}
+                                            </a>
+                                            <a href="{{ route('cart.index') }}" style="color:white; font-weight:lighter" class="ms-2">
+                                                <i style="color:white;" class="fa fa-shopping-cart me-1"></i>
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">

@@ -1,7 +1,8 @@
 @extends('layouts.store')
+@extends('layouts.navbar')
 @section('content')
-<section class="container mt-5">
-    <div class="row">
+<section class="container mt-5 vh-100">
+    <div class="row ">
         <div class="col-4">
             <h2>Detalhes do Endereço</h2>
             <form action="{{ route('order.store') }}" method="POST">

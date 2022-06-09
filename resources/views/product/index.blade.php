@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
-    <main style="height: 100vh;" class="d-flex flex-column justify-content-center">
+    <main class="d-flex flex-column justify-content-center mt-5">
         <div class="text-center justify-content-center d-flex align-items-center pb-3 mt-3">
 
             <a class="btn botao btn-dark" href="{{ route('product.create') }}" class="text-decoration-none text-reset">
@@ -33,7 +33,7 @@
                             <td>{{ $product->Category->name }}</td>
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->description }}</td>
-                            <td><img src="{{ asset($product->image) }}" style="width:100px;"></td>
+                            <td><img src="{{ asset($product->image) }}" style="width:50px;"></td>
                             <td>
                                 <a class="btn btn-success my-2 link-light"
                                     href="{{ route('product.edit', $product->id) }}">

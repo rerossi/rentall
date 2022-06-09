@@ -37,7 +37,7 @@
 
 </head>
 
-<body style="background-repeat: no-repeat;">
+<body class="justify-content-center align-items-start">
     @yield('navbar')
 
     @yield('content')

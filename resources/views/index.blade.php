@@ -44,7 +44,7 @@
         <div class="container d-flex justify-content-center">
             <div class="row d-flex justify-content-center ">
                 <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
-                    <a class="text-decoration-none border border-2 border-dark w-75" href="{{ route('search-category', 1) }}">
+                    <a class="text-decoration-none border border-2 border-dark w-75 p-3" href="{{ route('search-category', 1) }}">
                     <div>
                             <img src="./image/ferramentas.png" class="my-1">
                             <h3 class="text-dark">Ferramentas</h3>
@@ -52,7 +52,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
-                    <a class="text-decoration-none border border-2 border-dark w-75" href="{{ route('search-category', 2) }}">
+                    <a class="text-decoration-none border border-2 border-dark w-75 p-3" href="{{ route('search-category', 2) }}">
                     <div>
                             <img src="./image/controle-de-video-game.png">
                             <h3 class="text-dark">Games</h3>
@@ -60,7 +60,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
-                    <a class="text-decoration-none border border-2 border-dark w-75" href="{{ route('search-category', 3) }}">
+                    <a class="text-decoration-none border border-2 border-dark w-75 p-3" href="{{ route('search-category', 3) }}">
                     <div>
                             <img src="./image/informatica.png">
                             <h3 class="text-dark">Informatica</h3>
@@ -68,7 +68,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
-                    <a class="text-decoration-none border border-2 border-dark w-75" href="{{ route('search-category', 4) }}">
+                    <a class="text-decoration-none border border-2 border-dark w-75 p-3" href="{{ route('search-category', 4) }}">
                     <div>
                             <img src="./image/sports.png">
                             <h3 class="text-dark">Esportes</h3>
@@ -86,7 +86,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
-                    <a class="text-decoration-none border border-2 border-dark w-75" href="{{ route('search-category', 8) }}">
+                    <a class="text-decoration-none border border-2 border-dark w-75 p-3" href="{{ route('search-category', 8) }}">
                     <div>
                             <img src="./image/camera.png">
                             <h3 class="text-dark">Audio e Video</h3>
@@ -94,7 +94,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
-                    <a class="text-decoration-none border border-2 border-dark w-75" href="{{ route('search-category', 9) }}">
+                    <a class="text-decoration-none border border-2 border-dark w-75 p-3" href="{{ route('search-category', 9) }}">
                     <div>
                             <img src="./image/moda.png">
                             <h3 class="text-dark">Moda</h3>
@@ -102,7 +102,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 my-2 d-flex justify-content-center align-items-center text-center">
-                    <a class="text-decoration-none border border-2 border-dark w-75" href="{{ route('search-category', 10) }}">
+                    <a class="text-decoration-none border border-2 border-dark w-75 p-3" href="{{ route('search-category', 10) }}">
                     <div>
                             <img src="./image/brinquedos-do-bebe.png">
                             <h3 class="text-dark">Brinquedos</h3>

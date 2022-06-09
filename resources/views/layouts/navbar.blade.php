@@ -84,7 +84,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link text-dark" href="{{ route('user.editgit ') }}">
+                                                    <a class="nav-link text-dark" href="{{ route('user.edit') }}">
                                                         Perfil
                                                     </a>
                                                 </li>

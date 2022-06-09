@@ -2,7 +2,6 @@
 @section('content')
     <link rel="stylesheet" href="../../css/formProduct.css">
   
-
     <main class="container d-flex align-items-center">
         <div class="row d-flex justify-content-center">
             <div id="formCadastroProduto">

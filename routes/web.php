@@ -6,43 +6,29 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\eCommerceController;
 use App\Http\Controllers\OrderController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\UserController;
 
 require __DIR__ . '/auth.php';
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
+// Produtos da tela inicial
 Route::get('/', function () {
     return view('index');
 })->name('home');
-
-
-// Produtos tela inicial
 Route::get('/store', [eCommerceController::class, 'store'])->name('store');
-
 Route::get('/search/category/{category}', [eCommerceController::class, 'searchCategory'])->name('search-category');
 Route::get('/search/product/', [eCommerceController::class, 'searchProduct'])->name('search.product');
 Route::get('/show/{product}', [eCommerceController::class, 'showProduct'])->name('show.product');
 
 
 Route::middleware(['auth'])->group(function () {
+    // Carrinho
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/{product}', [CartController::class, 'store'])->name('cart.store');
     Route::delete('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
     Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 
+    // Produtos
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
     Route::get('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
@@ -51,9 +37,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product/trash', [ProductController::class, 'trash'])->name('product.trash');
     Route::get('/product/trash/restore/{product}', [ProductController::class, 'restore'])->name('product.restore');
     Route::get('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/user/edit/{user}', [UserController::class, 'update'])->name('user.update');
 });
 
-// Autenticado ou admin
+
+// Autenticado e admin
 Route::middleware(['auth', 'admin'])->group(function () {
     // Categoria
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');

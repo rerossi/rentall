@@ -1,33 +1,33 @@
 @extends('layouts.store')
 @extends('layouts.navbar')
 @section('content')
-<section class="container mt-5 vh-100">
+<section class="container mt-5">
     <div class="row ">
-        <div class="col-4">
-            <h2>Detalhes do Endereço</h2>
+        <div class="col-4 carrinho">
+            <h2 class="mb-4 mt-5"><b>Detalhes do Endereço</b></h2>
             <form action="{{ route('order.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="zipcode">CEP</label>
-                    <input type="text" class="form-control" name="zipcode" placeholder="CEP">
+                    <label for="zipcode"><b>CEP</b></label>
+                    <input type="text" class="form-control rounded border border-2 border-primary" name="zipcode" placeholder="CEP" required>
                 </div>
                 <div class="form-group">
-                    <label for="address">Endereco</label>
-                    <input type="text" class="form-control" name="address" placeholder="Endereço">
+                    <label for="address"><b>Endereco</b></label>
+                    <input type="text" class="form-control rounded border border-2 border-primary" name="address" placeholder="Endereço" required>
                 </div>
                 <div class="form-group">
-                    <label for="city">Cidade</label>
-                    <input type="text" class="form-control" name="city" placeholder="Cidade">
+                    <label for="city"><b>Cidade</b></label>
+                    <input type="text" class="form-control rounded border border-2 border-primary" name="city" placeholder="Cidade" required>
                 </div>
                 <div class="form-group">
-                    <label for="state">Estado</label>
-                    <input type="text" class="form-control" name="state" placeholder="Estado">
+                    <label for="state"><b>Estado</b></label>
+                    <input type="text" class="form-control rounded border border-2 border-primary" name="state" placeholder="Estado" required>
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary my-2 float-end">Comprar</button>
+                <button type="submit" class="btn btn-lg btn-primary my-2 float-end ">Comprar</button>
             </form>
         </div>
         <div class="col-8">
-            <h2>Detalhes dos Produtos</h2>
+            <h2 class="mb-2 mt-5"><b>Detalhes dos Produtos</b></h2>
             <table class="table">
                 <thead>
                     <tr>
@@ -44,15 +44,17 @@
                         <td>{{$item->Product->name}}</td>
                         <td>{{$item->Product->price}}</td>
                         <td>
-                            <form action="{{ route('cart.store', $item->Product->id) }}" method="POST" style="display:inline">
-                                @csrf
-                                <button type="submit" class="btn btn-primary btn-sm">+</button>
-                            </form>
-                            {{$item->units}}
                             <form action="{{ route('cart.destroy', $item->Product->id) }}" method="POST" style="display:inline">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit" class="btn btn-primary btn-sm">-</button>
+                                <button type="submit" class="btn btn-primary btn-sm " style="padding-left:10px; padding-right:10px;">-</button>
+                            </form>
+                          
+                            {{$item->units}}
+
+                            <form action="{{ route('cart.store', $item->Product->id) }}" method="POST" style="display:inline">
+                                @csrf
+                                <button type="submit" class="btn btn-primary btn-sm ">+</button>
                             </form>
                         </td>
                     </tr>

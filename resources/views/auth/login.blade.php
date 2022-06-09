@@ -2,6 +2,12 @@
 @section('content')
     <link rel="stylesheet" href="../css/login.css">
     <main class="container">
+        <div class="mb-3">
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img class="d-inline-block align-text-center" style="width:50px;" src="{{ asset('/image/logo-azul.png') }}"
+                    alt="">
+            </a>
+        </div>
         <h2 class="pb-2"> Login Rentall </h2>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />

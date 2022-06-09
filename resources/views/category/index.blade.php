@@ -1,8 +1,10 @@
 @extends('layouts.header')
 
 @section('content')
+
     <main style="height: 100vh;" class="d-flex flex-column justify-content-center">
-        <div class="text-center justify-content-center d-flex align-items-center pb-3 ">
+        
+        <div class="text-center justify-content-center d-flex align-items-center pb-3" style="margin-top:200px">
             <a style="color: white !important;" class="btn text-white btn-dark text-decoration-none text-reset"
                 href="{{ route('category.create') }}">
                 Criar Categorias

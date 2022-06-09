@@ -1,4 +1,5 @@
-@extends('layouts.store')
+@extends('layouts.header')
+@extends('layouts.navbar')
 @section('content')
 
     @foreach($orders as $order)
@@ -29,3 +30,4 @@
         </section>
     @endforeach
 @endsection
+@extends('layouts.footer')
